@@ -1,4 +1,4 @@
-# code11Proj
+# Code-11 Barcode
 
 Code-11 is a barcode system for encoding characters used primarily in labeling telecommunications equipment. The characters encoded are limited to digits 0 through 9, the dash (“–”), and a special start/stop character which appears at the beginning and end of each Code-11 barcode.
 
