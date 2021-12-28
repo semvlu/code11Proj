@@ -1,53 +1,27 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
-int checkK(char *, char, int, char); 
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<ctype.h>
+#include<math.h>
 
-int checkK(char *s,char c,int n,char Ccheck)
-{ 
-    // c represents the user input ,Ccheck is last time we calculated
-    int sum=0,weight,correct; 
-    if(c=='-')
-    {
-        correct = 10; 
-    }
-    else
-    {
-        correct = c- '0'; 
-    }
-    for(int i =1; i <= n+1; i++)
-    { 
-        if(i == n+1)
-        {
-            if(Ccheck =='-')
-            { 
-                weight = 10;
-            }
-            else
-            {
-                weight = Ccheck-'0';
-            } 
-        }
-        else
-        {
-            if(s[i-1]=='-')
-            { 
-                weight = 10;
-            }
-            else
-            {
-                weight = s[i-1] - '0';
-            } 
-        }
-        sum += ((n-i+1)%9+1) * weight; 
-    }
-    if(sum % 11 == correct)
-    { 
-        return 1;
-    }
-    else
-    {
-        return 0;
-    } 
+int checkK(int d[],int n)
+{
+	int chk=d[n+1];		//value that k support to be
+	int sum=0;		//value to be %11
+	int w;		//weight
+	for(int i=0;i<n+1;i++){
+		if(d[i]!=-1){
+			w=d[i];
+		}
+		else{
+			w=10;
+		}
+		sum=sum+((n-i)%9+1)*w;
+	}
+	if(sum%11==chk){
+		return 0;
+	}
+	else{
+		return -1;		//bad K
+	}
 }

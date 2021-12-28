@@ -1,38 +1,27 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
-int checkC(char *, char, int);
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<ctype.h>
+#include<math.h>
 
-int checkC(char * s,char c,int n)
+int checkC(int d[],int n)
 {
-    int correct,sum=0,weight; 
-    if(c == '-')
-    {
-        correct = 10; 
-    }
-    else
-    {
-        correct = c-'0'; 
-    }
-    for(int i=1;i<=n;i++)
-    { 
-        if(s[i-1] == '-')
-        {
-            weight = 10; 
-        }
-        else
-        {
-            weight = s[i-1] - '0'; 
-        }
-        sum += ((n-i)%10+1) * weight; 
-    }
-    if(sum % 11 == correct)
-    { 
-        return 1;
-    }
-    else
-    {
-        return 0;
-    } 
+	int chk=d[n];		//value that c support to be
+	int sum=0;		//value to be %11
+	int w;		//weight
+	for(int i=0;i<n;i++){
+		if(d[i]!=-1){
+			w=d[i];
+		}
+		else{
+			w=10;
+		}
+		sum=sum+((n-i-1)%10+1)*w;
+	}
+	if(sum%11==chk){
+		return 0;
+	}
+	else{
+		return -1;		//bad C
+	}
 }

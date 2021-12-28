@@ -1,28 +1,25 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
-int direction(int *, int, int);
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<ctype.h>
+#include<math.h>
 
-int direction(int *d, int width, int m)
-{
-    if((d[1] <= width) && d[2] <= width && d[3] > width && d[4]>width &&
-    d[5] <= width)
-    {
-        if(d[m-4] <= width && d[m-3] <= width && d[m-2] > width && d[m-1] > width &&
-        d[m] <= width)
-        {
-            return 1;
-        }
-    }
-
-    if((d[1] <= width) && d[2] > width && d[3] > width && d[4] <= width && d[5] <= width)
-    { 
-        if(d[m-4] <= width && d[m-3] > width && d[m-2] > width && d[m-1] <= width &&
-        d[m] <= width)
-        { 
-            return 0;
-        } 
-    }
-    return -1; //error 
+int direction(int a[],int m){		//return 1 if ok   0 if bad code
+	if(a[0]==0&&a[1]==0&&a[2]==1&&a[3]==1&&a[4]==0&&a[m-5]==0&&a[m-4]==0&&a[m-3]==1&&a[m-2]==1&&a[m-1]==0){		//upright
+		return 1;
+	}
+	else if(a[0]==0&&a[1]==1&&a[2]==1&&a[3]==0&&a[4]==0&&a[m-5]==0&&a[m-4]==1&&a[m-3]==1&&a[m-2]==0&&a[m-1]==0){		//invert
+		int count=0;	
+		int hold;
+		while(count<(m-1)/2){		//reverse
+			hold=a[count];
+			a[count]=a[m-count-1];
+			a[m-count-1]=hold;
+			count++;
+		}
+		return 1;
+	}
+	else{
+		return 0;
+	}
 }
