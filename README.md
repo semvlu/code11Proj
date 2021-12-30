@@ -24,5 +24,8 @@ Your problem is to decode the information obtained by scanning a Code-11 barcode
 Workflow:
 
 ![alt text](https://github.com/semvlu/code11Proj/blob/main/Code11.png)
+***
 
+# Contributors
 [semvlu](https://github.com/semvlu)
+[YI](https://github.com/yi-0924)
