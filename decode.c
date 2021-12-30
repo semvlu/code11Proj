@@ -4,7 +4,7 @@
 #include<ctype.h>
 #include<math.h>
 
-int decode(int a[],int d[],int m,int n) //convert to decimal then to characters, return -1 if bad code
+int decode(int a[],int d[],int m,int n) 	//convert to decimal then to characters, return -1 if bad code
 {
 	int j=0;
 	int i=0;
