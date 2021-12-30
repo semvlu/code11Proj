@@ -21,11 +21,12 @@ the C check character is 5 and the K check character is 2. The barcodes for the 
 Simple barcode readers measure the intensity of light reflected from a barcode to a linear array containing hundreds of tiny CCD sensors, each reporting light or dark. Light and dark regions are identified, and the width of each region is used by the decoding software to validate the barcode and to obtain the encoded information. Since the orientation of the barcode is not fixed, the software must be able to decode the barcode whether it is scanned from left to right or from right to left.
 Your problem is to decode the information obtained by scanning a Code-11 barcode, given the widths of the light and dark regions detected by the reader. Assume a wide bar is intended to be twice as wide as a narrow bar. Due to inconsistencies among printers, the width of a bar can be up to 5 percent larger or smaller than intended. There are no zero-length messages (with barcodes containing only start/stop, check characters, and inter-character spacing).
 
-Workflow:
+# Workflow:
 
 ![alt text](https://github.com/semvlu/code11Proj/blob/main/Code11.png)
 ***
 
 # Contributors
 [semvlu](https://github.com/semvlu)
+
 [YI](https://github.com/yi-0924)
