@@ -6,8 +6,8 @@
 
 int checkC(int d[],int n)
 {
-	int chk=d[n];		//value that c support to be
-	int sum=0;		//value to be %11
+	int chk=d[n];	//value that c suppose to be
+	int sum=0;	//value to be %11
 	int w;		//weight
 	for(int i=0;i<n;i++){
 		if(d[i]!=-1){
@@ -22,6 +22,6 @@ int checkC(int d[],int n)
 		return 0;
 	}
 	else{
-		return -1;		//bad C
+		return -1;	//bad C
 	}
 }
