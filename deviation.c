@@ -10,7 +10,7 @@
 #include<ctype.h>
 #include<math.h>
 
-int deviation(int a[],int b[],int m) //return 1 if ok   -1 if bad code
+int deviation(int a[],int b[],int m)	//return 1 if ok, -1 if bad code
 {		
 	int nrwmin=a[0],widmin=200,widmax=0;
 	double mid=0;		
@@ -46,7 +46,7 @@ int deviation(int a[],int b[],int m) //return 1 if ok   -1 if bad code
 		}
 	}
 	if(widmax*0.95>widmin*1.05){
-		return -1;		//bad code
+		return -1;	//bad code
 	}
 	else{
 		for(int i=0;i<m;i++){
