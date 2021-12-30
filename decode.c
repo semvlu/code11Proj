@@ -4,8 +4,8 @@
 #include<ctype.h>
 #include<math.h>
 
-int decode(int a[],int d[],int m,int n)
-{		//convert to decimal then to characters		//return -1 if bad code
+int decode(int a[],int d[],int m,int n) //convert to decimal then to characters, return -1 if bad code
+{
 	int j=0;
 	int i=0;
 	for(i=6;i<=m-11;i=i+6){
@@ -62,7 +62,7 @@ int decode(int a[],int d[],int m,int n)
 				d[j]=-1;		//-1 means "-"
 				break;
 			case 6:
-				d[j]=-2;		//start stop
+				d[j]=-2;		//start/stop
 				break;
 			default:
 				return -1;
