@@ -6,8 +6,8 @@
 
 int checkK(int d[],int n)
 {
-	int chk=d[n+1];		//value that k support to be
-	int sum=0;		//value to be %11
+	int chk=d[n+1];	//value that k suppose to be
+	int sum=0;	//value to be %11
 	int w;		//weight
 	for(int i=0;i<n+1;i++){
 		if(d[i]!=-1){
@@ -22,6 +22,6 @@ int checkK(int d[],int n)
 		return 0;
 	}
 	else{
-		return -1;		//bad K
+		return -1;	//bad K
 	}
 }
