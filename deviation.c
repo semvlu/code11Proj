@@ -4,9 +4,15 @@
 #include<ctype.h>
 #include<math.h>
 
-int deviation(int a[],int b[],int m)
-{		//return 1 if ok   -1 if bad code
-	int nrwmin=a[0],widmin=0,widmax=0;
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<ctype.h>
+#include<math.h>
+
+int deviation(int a[],int b[],int m) //return 1 if ok   -1 if bad code
+{		
+	int nrwmin=a[0],widmin=200,widmax=0;
 	double mid=0;		
 	for(int i=0;i<m;i++){
 		if(a[i]<nrwmin){
@@ -32,13 +38,11 @@ int deviation(int a[],int b[],int m)
 		if(b[i]<mid){
 			b[i]=b[i]*2;
 		}
-		if(b[i]>widmin){
-			if(b[i]>widmax){
-				widmax=b[i];
-			}
-			else{
-				widmin=b[i];
-			}
+		if(b[i]>widmax){
+			widmax=b[i];
+		}
+		if(b[i]<widmin){
+			widmin=b[i];
 		}
 	}
 	if(widmax*0.95>widmin*1.05){
