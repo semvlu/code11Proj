@@ -11,19 +11,6 @@
 #include "checkK.c"
 #include "out.c"
 
-#include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
-#include<ctype.h>
-#include<math.h>
-#include "deviation.c"
-#include "direction.c"
-#include "checkspace.c"
-#include "decode.c"
-#include "checkC.c"
-#include "checkK.c"
-#include "out.c"
-
 int main(){
 	int m;
 	int time=1;
@@ -86,7 +73,10 @@ int main(){
 								int result=decode(a,d,m,n);		//decode characters
 								if(result==-1)
 								{
-									printf("Case %d: bad code\n",time);
+									if (m<29)
+										printf("Case %d: bad code\n", time);
+									else
+										printf("Case %d: bad code\n",time);
 									//break;
 								}
 								else
